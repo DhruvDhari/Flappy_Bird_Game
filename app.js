@@ -20,6 +20,15 @@ let bird = {
 
 }
 
+//pipes
+let pipeArray=[];
+let pipeWidth=100;
+let pipeHeight=500;
+let pipeX=boardWidth;
+let pipeY=0;
+
+let topPipeImg;
+let bottomPipeImg;
 
 window.onload= function(){
     board=document.getElementById("board");
@@ -29,8 +38,8 @@ window.onload= function(){
 
     //draw flappy bird
 
-    context.fillStyle="red";
-    context.fillRect(bird.x,bird.y,bird.width,bird.height);
+    // context.fillStyle="red";
+    // context.fillRect(bird.x,bird.y,bird.width,bird.height);
 
     //loading image
     birdImg = new Image();
@@ -39,5 +48,31 @@ window.onload= function(){
         context.drawImage(birdImg,bird.x,bird.y,bird.width,bird.height);
     }
 
+    topPipeImg=new Image();
+    topPipeImg.src="./images/flappybird-pipe.png";
 
+    bottomPipeImg=new Image();
+    bottomPipeImg.src="./images/flappybird-pipe2.png";
+
+    requestAnimationFrame(update);
+    setInterval(placePipes,1500);// every 1.5s
+}
+
+function update(){
+    requestAnimationFrame(update);
+    context.clearRect(0,0,board.width,board.height);
+
+    //bird
+    context.drawImage(birdImg,bird.x,bird.y,bird.width,bird.height);
+}
+
+function placePipes(){
+    let topPipe={
+        img :topPipeImg,
+        x: pipeX,
+        y:pipeY,
+        width :pipeWidth,
+        height:pipeHeight,
+        passed :false
+    }
 }
