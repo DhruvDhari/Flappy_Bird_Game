@@ -56,7 +56,7 @@ window.onload= function(){
     bottomPipeImg.src="./images/flappybird-pipe2.png";
 
     requestAnimationFrame(update);
-    setInterval(placePipes,1500);// every 1.5s
+    setInterval(placePipes,1500);// every 1.5s the pipe will be placed
 }
 
 function update(){
