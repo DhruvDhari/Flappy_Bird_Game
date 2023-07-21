@@ -1,11 +1,11 @@
-//board
+//===============board===============
 
 let board;
 let boardWidth=360;
 let boardHeight=640;
 let context;
 
-//bird
+//==================bird=======================
 let birdWidth=32;// width/height=60/45=4/3
 let birdHeight=24;
 let birdX=boardWidth/8;
@@ -20,7 +20,7 @@ let bird = {
 
 }
 
-//pipes
+//==================pipes====================
 let pipeArray=[];
 let pipeWidth=100;
 let pipeHeight=500;
@@ -36,7 +36,7 @@ window.onload= function(){
     board.width  =boardWidth;
     context= board.getContext("2d");
 
-    //draw flappy bird
+    //=============draw flappy bird======================
 
     // context.fillStyle="red";
     // context.fillRect(bird.x,bird.y,bird.width,bird.height);
@@ -47,6 +47,7 @@ window.onload= function(){
     birdImg.onload = function(){
         context.drawImage(birdImg,bird.x,bird.y,bird.width,bird.height);
     }
+    //=========for pipes==============
 
     topPipeImg=new Image();
     topPipeImg.src="./images/flappybird-pipe.png";
